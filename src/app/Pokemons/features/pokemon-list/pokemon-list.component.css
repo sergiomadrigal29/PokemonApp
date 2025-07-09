@@ -1,0 +1,110 @@
+/* Estilos generales */
+.section-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 70vh; /* Altura mínima para centrar mejor */
+}
+
+/* Grid responsivo */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Ajustamos el tamaño mínimo */
+  gap: 24px; /* Espaciado entre tarjetas */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centrado horizontal */
+  place-items: center; /* Centra las tarjetas cuando hay pocas */
+}
+
+.pokemon-grid:has(.pokemon-card-container:only-child) {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-grid:has(.pokemon-card-container:only-child) {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-card-container {
+  width: 100%;
+  max-width: 250px; /* Ancho máximo para evitar que las tarjetas sean demasiado grandes */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pokemon-card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+app-pokemon-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Botones de paginación */
+.btn-primary {
+  background-color: #ffcb05;
+  border-color: #ffcb05;
+  color: #3b4cca;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #f7c205;
+  border-color: #f7c205;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #666;
+}
+
+/* Iconos y badges */
+.type-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.type-icon {
+  font-size: 1.25rem;
+}
+
+/* Imágenes responsivas */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Modal personalizado */
+.custom-modal .modal-header {
+  border-bottom: none;
+}
+
+.custom-modal .modal-footer {
+  border-top: none;
+}
+
+.custom-modal .modal-body {
+  padding: 2rem;
+}
+
+.custom-modal .badge {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,15 @@
+/* Usa una variable CSS para el padding-top */
+.main-with-header-spacing {
+  margin-top: 80px; /* Altura aproximada del header */
+}
+
+.main-with-header-spacing {
+  margin-top: var(--header-height, 80px); /* Valor predeterminado de 80px */
+}
+
+/* Si el header tiene una altura diferente en pantallas pequeñas, ajusta dinámicamente */
+@media (max-width: 768px) {
+  .main-with-header-spacing {
+    margin-top: 120px; /* Aumenta el espacio para pantallas pequeñas si es necesario */
+  }
+}

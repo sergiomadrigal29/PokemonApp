@@ -1,0 +1,29 @@
+.custom-modal {
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-header h1 {
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 0.95rem;
+}
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+img {
+  max-height: 200px;
+  object-fit: contain;
+}

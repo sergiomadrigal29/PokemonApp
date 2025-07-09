@@ -1,0 +1,68 @@
+<section
+  class="pokemon-list container mx-auto px-2 mb-4"
+  aria-label="Lista de Pokémon"
+>
+  @if (state().status === 'loading') {
+  <div class="loading-overlay d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+  } @else if (state().status === 'error') {
+  <p class="text-center text-danger fw-bold fs-5">
+    Error al cargar los Pokémon
+  </p>
+  } @else if (state().status === 'loaded') {
+  <header class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="fs-2 fw-bold mt-3"></h1>
+  </header>
+  <section class="container-fluid section-center">
+    @if (!state().pokemon.length) {
+    <p class="text-center text-secondary">
+      {{
+        isSearching
+          ? "No se encontraron Pokémon en la búsqueda."
+          : "No se encontraron Pokémon."
+      }}
+    </p>
+    } @else {
+    <div class="pokemon-grid">
+      @for (pokemon of state().pokemon; track pokemon.idPokemon) {
+      <div class="pokemon-card-container">
+        <app-pokemon-card
+          [pokemon]="pokemon"
+          (pokemonSelected)="onPokemonSelected(pokemon)"
+        ></app-pokemon-card>
+      </div>
+      }
+    </div>
+    }
+  </section>
+  }
+</section>
+
+<nav
+  class="d-flex justify-content-center mt-4"
+  aria-label="Controles de paginación"
+>
+  <button
+    type="button"
+    (click)="previousPage()"
+    [disabled]="isSearching || pokemonsState.isPreviousDisabled()"
+    class="btn btn-primary px-4 py-2 fw-bold m-1"
+  >
+    ⬅ Anterior
+  </button>
+  <button
+    type="button"
+    (click)="nextPage()"
+    [disabled]="isSearching || pokemonsState.isNextDisabled()"
+    class="btn btn-primary px-4 py-2 fw-bold m-1"
+  >
+    Siguiente ➡
+  </button>
+</nav>
+
+<app-pokemon-detail-modal
+  [selectedPokemon]="selectedPokemon"
+></app-pokemon-detail-modal>

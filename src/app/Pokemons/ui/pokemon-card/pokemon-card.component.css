@@ -1,0 +1,92 @@
+.pokemon-card {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 10px; /* Espacio interno */
+  width: 250px; /* Ajusta el tamaño de la tarjeta según sea necesario */
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  z-index: 1; /* Asegúrate de que la superposición no cubra el botón */
+}
+
+button {
+  z-index: 2; /* El botón debe estar por encima de la superposición */
+}
+
+.image-container {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.pokemon-img {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 200px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.type-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 5px 10px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.type-icon {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-size: 1.25rem; /* Ajusta el tamaño del icono */
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-sm {
+  font-size: 0.875rem; /* Ajusta el tamaño de la fuente del botón */
+  padding: 0.25rem 0.5rem; /* Ajusta el padding del botón */
+}
